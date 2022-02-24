@@ -17,26 +17,32 @@
 
     <input type="button" onclick="resolveForm()" value="Get values from form">
 </form>
-
-
-<p id="result">This text will be replaced </p>
-
-<script> 
-
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-</script>
-
+<label for="input1">Enter the secret president name</label>
+        <input id="input1" type="password" value="George Washington"> 
+        <br>
+        <label for="input2">Guess the president</label>
+        <input id="input2" type="text">
+        <input type="button" value="Check the guess" onclick="checkGuess()">
+        <div id="result">The correct/wrong count will be displayed here</div>
+        <script>
+            var correct=0;
+            var wrong=0;
+            function checkGuess(){
+                secret= document.getElementById("input1").value
+                guess= document.getElementById("input2").value
+                out = document.getElementById("result")
+                if(secret==guess)
+                {
+                    correct++;
+                    alert("You got it right")
+                    out.innerHTML = "Correct count:"+correct+"  Wrong count:"+wrong
+                }else{
+                    wrong++;
+                    alert("Wrong President")
+                    out.innerHTML = "Correct count:"+correct+"  Wrong count:"+wrong
+                }
+            }
+        </script>
+    </form>
 </body>
 </html> 
