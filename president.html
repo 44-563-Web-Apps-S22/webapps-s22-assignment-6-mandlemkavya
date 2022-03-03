@@ -16,6 +16,10 @@
         <input id="input2" type="text">
         <input type="button" value="Check the guess" onclick="checkGuess()">
         <div id="result">The correct/wrong count will be displayed here</div>
+        </form>
+
+        <p id="result">This text will be replaced </p>
+
         <script>
             var correct=0;
             var wrong=0;
@@ -35,6 +39,34 @@
                 }
             }
         </script>
-    </form>
+
+    <label>Image changes on click</label><br>
+    <div class="container">
+        <img src="Munia.jfif" class="rounded" id="image" alt="Munia" style="height: 100px;width: 100px;" onclick="swapImage()">
+    </div>
+
+    <script>
+        let useImage = 1;
+        function swapImage() {
+            switch (useImage) {
+                case 1:
+                    document.getElementById("image").src = "Munia.jfif";
+                    useImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("image").src = "Albatross.jpg";
+                    useImage = 3;
+                    break;
+                case 3:
+                    document.getElementById("image").src = "Nightingale.jpg";
+                    useImage = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+
 </body>
 </html> 
